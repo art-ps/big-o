@@ -301,6 +301,7 @@
     track.className = "bar-track";
     const fill = document.createElement("div");
     fill.className = "bar-fill";
+    fill.style.transition = "width 0.18s ease";
     track.appendChild(fill);
     viz.append(cells, track, caption("log n search per element"));
 
@@ -312,10 +313,8 @@
         cellEls[j].classList.toggle("on", j < outer || (j === outer && inner > 0));
         cellEls[j].classList.toggle("hot", j === outer && inner > 0);
       }
-      /* halve toward one side, alternating per element */
-      const w = 100 / Math.pow(2, inner);
-      fill.style.width = w + "%";
-      fill.style.left = outer % 2 ? 100 - w + "%" : "0%";
+      /* same halving as pattern 2, restarted for every element */
+      fill.style.width = 100 / Math.pow(2, inner) + "%";
     }
 
     function step() {
@@ -327,7 +326,7 @@
       render();
     }
 
-    return { ms: 200, step, freeze() { outer = 5; inner = 2; render(); } };
+    return { ms: 280, step, freeze() { outer = 5; inner = 2; render(); } };
   }
 
   /* 6 ── Divide & conquer: every level re-does n work. */
