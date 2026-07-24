@@ -1,21 +1,44 @@
 # Big-O Visualizer
 
-An animated, dark-neon website that makes time complexity visible:
+[![Deploy to GitHub Pages](https://github.com/art-ps/big-o/actions/workflows/pages.yml/badge.svg)](https://github.com/art-ps/big-o/actions/workflows/pages.yml)
 
-- **10 Must-Know Time Complexity Patterns** — each pattern (hash lookup, halving
-  loop, single loop, sequential loops, loop + binary search, divide & conquer,
-  nested loop, triangular loop, branching recursion, permutations) runs a looping
+Animated, dark-neon single-page site that makes time complexity visible — watch
+each pattern do its work, then compare how they explode on the growth chart.
+
+**[Live demo → art-ps.github.io/big-o](https://art-ps.github.io/big-o/)**
+
+[![Big-O Visualizer screenshot](docs/screenshot.png)](https://art-ps.github.io/big-o/)
+
+## Features
+
+- **10 Must-Know Time Complexity Patterns** — hash lookup, halving loop, single
+  loop, sequential loops, loop + binary search, divide & conquer, nested loop,
+  triangular loop, branching recursion, permutations. Each runs a looping
   visualization next to its code snippet and Big-O label.
-- **Growth at a glance** — an interactive chart comparing O(1) through O(n!):
-  toggleable curves, log/linear scale, crosshair tooltip, and a table view.
+- **Interactive growth chart** — O(1) through O(n!) side by side: toggleable
+  curves, log/linear scale, crosshair tooltip, and a table view.
+- **Zero dependencies** — plain HTML/CSS/JS, no build step, no frameworks.
 
-## Run it
+## Quick start
 
-No build step — plain HTML/CSS/JS. Open `index.html` in a browser, or serve the
-folder:
+Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server
 ```
 
-Works as-is on GitHub Pages.
+Then visit <http://localhost:8000>.
+
+## Project structure
+
+```
+index.html   — page markup, all sections
+css/         — styles (dark neon theme, animations)
+js/viz.js    — the 10 pattern visualizations
+js/chart.js  — interactive growth chart
+```
+
+## Deployment
+
+Pushes to `master` deploy automatically to GitHub Pages via
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml).
