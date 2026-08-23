@@ -47,3 +47,7 @@ Pushes to `master` deploy automatically to GitHub Pages via
 
 Companion to [Sorting Visualizer](https://github.com/art-ps/sorting-viz), which
 animates six sorting algorithms beside the Go code each one is running.
+
+## License
+
+[MIT](LICENSE)
