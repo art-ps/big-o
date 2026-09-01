@@ -520,6 +520,10 @@ footer {
   padding: 26px 16px 40px;
 }
 
+footer p { margin: 0; }
+footer p + p { margin-top: 6px; }
+footer a { color: var(--blue); }
+
 /* ── Responsive ───────────────────────────────────── */
 
 @media (max-width: 700px) {
